@@ -1,9 +1,15 @@
 {
    "version": 2,
    "name": "video-player",
-   "builds": [
-      { "src": "index.js", "use": "@vercel/node" }
-   ],
+  "builds": [
+    {
+     "src": "package.json",
+     "use": "vercel-sapper",
+     "config": {
+         "include": ["posts"]
+      }
+    }
+  ],
    "routes": [
       { "src": "/(.*)", "dest": "src/index.js" }
    ]
