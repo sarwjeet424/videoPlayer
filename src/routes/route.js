@@ -7,8 +7,8 @@ const {
 } = require("../controller/videoController");
 const {
   createSlot,
-  bookSlots,
-  remainingSlots,
+  allBookSlots,
+  bookedSlots,
   availableSlots,
 } = require("../controller/slotController");
 
@@ -18,9 +18,9 @@ router.get("/getVideoPlaylist", getPlaylistVideos);
 
 //------------------------- Slot APIS -------------------------------//
 router.post("/slotBooking", createSlot);
-router.get("/allBookedSlots", bookSlots);
+router.get("/allBookedSlots", allBookSlots);
 router.get("/availableSlots", availableSlots);
-router.get("/bookedSlots", remainingSlots);
+router.get("/bookedSlots", bookedSlots);
 
 //------------------------- Not Found API ---------------------------//
 router.all("/*", function (req, res) {
