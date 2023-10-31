@@ -48,7 +48,7 @@ const createSlot = async (req, res) => {
   }
 };
 
-const bookSlots = async (req, res) => {
+const allBookSlots = async (req, res) => {
   try {
     const getBookSlots = await slotModel.find({ isDeleted: false });
     return res.status(200).send({ status: true, data: getBookSlots });
@@ -57,7 +57,7 @@ const bookSlots = async (req, res) => {
   }
 };
 
-const remainingSlots = async (req, res) => {
+const availableSlots = async (req, res) => {
   try {
     const date = req.query.date;
     if (!date)
@@ -104,7 +104,7 @@ const remainingSlots = async (req, res) => {
   }
 };
 
-const availableSlots = async (req, res) => {
+const bookedSlots = async (req, res) => {
   try {
     const date = req.query.date;
     if (!date)
@@ -122,4 +122,4 @@ const availableSlots = async (req, res) => {
   }
 };
 
-module.exports = { createSlot, bookSlots, remainingSlots, availableSlots };
+module.exports = { createSlot, allBookSlots, availableSlots, bookedSlots };
