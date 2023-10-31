@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const route = require("./routes/route");
-
+const cors = require("cors");
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 mongoose
   .connect(
     "mongodb+srv://sarwjeet:96568437528p@cluster0.37xdw2i.mongodb.net/",
